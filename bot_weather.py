@@ -1,5 +1,4 @@
 import requests
-import datetime
 from config import tg_bot_token, open_weather_token
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -45,7 +44,6 @@ async def get_weather(message: types.Message):
             emoji = check_emoji[type_emoji]
 
         await message.reply(
-            f"****{datetime.datetime.now().strftime('%d.%m.%Y %H:%M')}****\n"
             f"Погода в городе '{city}' сейчас:\nТемпература: {cur_temp}°C\n"
             f"Влажность: {humidity}%\nДавление: {pressure} мм.рт.ст\nСкорость ветра: {wind_speed} м/с\n"
             f"За окном {weather}.{emoji}\n"
